@@ -1,0 +1,20 @@
+# Byte-compiled
+__pycache__/
+*.py[cod]
+
+# Environments
+.venv/
+venv/
+env/
+
+# Project-specific logs
+logs/
+*.log
+
+# OS & IDEs
+.DS_Store
+.vscode/
+.idea/
+
+# Secrets
+.env
