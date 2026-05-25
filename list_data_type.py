@@ -103,7 +103,7 @@ def flatten_list_with_extend(nested_list):
             flat_list.extend(result)
         else:
             flat_list.append(value)
-    return flat_list
+    return flat_listcollections
 
 # print(flatten_list_with_extend(matrix3))
 
@@ -146,3 +146,37 @@ def custom_filter(func, list):
 numbers = [1, 2, 3, 4]
 even_numbers = custom_filter(lambda x: x if x%2==0 else None, numbers)
 print(even_numbers)
+
+
+from collections import Counter
+
+ll = [11,12,13,14,15,14,13,14,12,13]
+most_common = Counter(ll).most_common(3)
+print('mc', most_common)
+
+
+
+print("____________________________________")
+
+# Use itertools.combinations to find all possible pairs from a 
+# list and filter pairs that sum to a target value.
+
+from itertools import combinations
+
+nums_list = [1,2,3,4,5,6,4,6,2,7,8,3,6]
+
+def combin_with_loop(data, target):
+    combinations_from_list = combinations(data, 2)
+    result = []
+    for i in combinations_from_list:
+       sum = i[0] + i[1]
+       if sum == target:
+           result.append(i)
+    return result
+            
+print(combin_with_loop(nums_list, 12))
+
+def combination_with_com(data, target):
+    return [ pair for pair in combinations(data, 2) if pair[0] + pair[1] == target ]
+
+print(combination_with_com(nums_list, 12))

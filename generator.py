@@ -99,8 +99,6 @@ elt_pipeline = square(
 for value in elt_pipeline:
     print(value)
 
-# Write a generator function that yields Fibonacci numbers up to n.
-
 # Difference between return and yield?
 # return	                yield
 # terminates function	    pauses function
@@ -110,3 +108,19 @@ for value in elt_pipeline:
 # Difference between iterator and generator?
 
 # Generator is a simpler way to create iterators.
+
+
+print("------------------------")
+# Write a generator function that yields Fibonacci numbers up to n.
+
+def fibonacci():
+    a, b = 0, 1
+
+    while True:
+        yield a
+        a, b = b, a+b
+
+fib = fibonacci()
+
+for i in range(10):
+    print(next(fib))
